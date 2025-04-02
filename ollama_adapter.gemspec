@@ -5,12 +5,12 @@ require_relative "lib/ollama_adapter/version"
 Gem::Specification.new do |spec|
   spec.name = "ollama_adapter"
   spec.version = OllamaAdapter::VERSION
-  spec.authors = ["mdlka"]
-  spec.email = ["mogilevskiy499@gmail.com"]
+  spec.authors = ["mdlka", "SergeevaAlexandra", "Darsidr", "katek1823"]
+  spec.email = ["mogilevskii@sfedu.ru"]
 
   spec.summary = "Write a short summary, because RubyGems requires one."
   spec.description = "Write a longer description or delete this line."
-  # spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage = "https://github.com/mdlka/ollama-adapter"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 
