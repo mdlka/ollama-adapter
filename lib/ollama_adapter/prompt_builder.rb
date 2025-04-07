@@ -4,18 +4,18 @@ module OllamaAdapter
   class PromptBuilder
     def self.build_extraction_prompt(text, schema)
       <<~PROMPT
-        Извлеки структурированную информацию из текста ниже согласно заданной схеме.
-        Текст: """#{text}"""
+        Extract the structured information from the text below according to the specified scheme.
+        Text: """#{text}"""
 
-        Схема извлечения (в JSON):
+        Extraction scheme (in JSON):
         #{JSON.pretty_generate(schema)}
 
-        Требования:
-        - Возвращай ТОЛЬКО валидный JSON без пояснений
-        - Если поле не найдено, используй null
-        - Строго соблюдай схему
+        Requirements:
+        - Return ONLY valid JSON without explanation
+        - If the field is not found, use null
+        - Strictly follow the scheme.
 
-        Результат:
+        Result:
       PROMPT
     end
   end
