@@ -1,9 +1,9 @@
 module OllamaAdapter
-  class ResumeExtractor
+  class Extractor
     def initialize(ollama_client)
       @client = ollama_client
     end
-  
+
     def extract(text, schema)
       prompt = PromptBuilder.build_extraction_prompt(text, schema)
       @client.generate(
