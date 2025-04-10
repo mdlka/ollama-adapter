@@ -1,0 +1,8 @@
+module OllamaAdapter
+  class Extractor
+    @client: OllamaClient
+
+    def initialize: (OllamaClient) -> void
+    def extract: (String text, Hash[String, untyped] schema) -> String
+  end
+end

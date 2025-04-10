@@ -1,0 +1,5 @@
+module OllamaAdapter
+  class PromptBuilder
+    def self.build_extraction_prompt: (String text, Hash[String, untyped] schema) -> String
+  end
+end

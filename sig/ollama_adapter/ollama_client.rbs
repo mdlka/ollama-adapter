@@ -1,0 +1,11 @@
+module OllamaAdapter
+  class OllamaClient
+    @model_name: String
+    @connection: untyped
+
+    def initialize: (String ollama_url, String model_name) -> void
+    def generate: (prompt: String, options: untyped) -> String
+
+    private def handle_response: (response: untyped) -> String
+  end
+end

@@ -4,6 +4,11 @@ require "json"
 
 module OllamaAdapter
   class PromptBuilder
+    # Builds a prompt to extract structured data from text based on a schema.
+    #
+    # @param text [String] The unstructured text to extract data from.
+    # @param schema [Hash{String => Object}] The schema defining the expected data structure.
+    # @return [String] The formatted prompt for the model.
     def self.build_extraction_prompt(text, schema)
       <<~PROMPT
         Extract the structured information from the text below according to the specified scheme.
