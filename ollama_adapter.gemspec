@@ -8,8 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = %w[mdlka SergeevaAlexandra Darsidr katek1823]
   spec.email = %w[mogilevskii@sfedu.ru aleser@sfedu.ru dsidoruk@sfedu.ru kopaneva@sfedu.ru]
 
-  spec.summary = "Write a short summary, because RubyGems requires one."
-  spec.description = "Write a longer description or delete this line."
+  spec.summary = "A gem for extracting structured data from text using the Ollama API."
   spec.homepage = "https://github.com/mdlka/ollama-adapter"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
@@ -26,8 +25,4 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-
-  spec.add_development_dependency "minitest", "~> 5.16"
-  spec.add_development_dependency "rubocop", "~> 1.21"
-  spec.add_dependency "faraday", "~> 2.12"
 end
