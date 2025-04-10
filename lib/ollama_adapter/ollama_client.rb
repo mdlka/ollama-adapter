@@ -1,5 +1,7 @@
-require 'faraday'
-require 'json'
+# frozen_string_literal: true
+
+require "faraday"
+require "json"
 
 module OllamaAdapter
   class OllamaClient
@@ -7,7 +9,7 @@ module OllamaAdapter
       @model_name = model_name
       @connection = Faraday.new(
         url: ollama_url,
-        headers: { 'Content-Type' => 'application/json' },
+        headers: { "Content-Type" => "application/json" },
         request: { timeout: 120 }
       )
     end
@@ -19,7 +21,7 @@ module OllamaAdapter
         stream: false
       }.merge(options)
 
-      response = @connection.post('/api/generate') do |request|
+      response = @connection.post("/api/generate") do |request|
         request.body = JSON.generate(params)
       end
 
@@ -30,11 +32,15 @@ module OllamaAdapter
 
     def handle_response(response)
       unless response.success?
-        error = JSON.parse(response.body) rescue {}
-        raise "Error #{response.status}: #{error['error'] || response.body}"
+        error = begin
+          JSON.parse(response.body)
+        rescue StandardError
+          {}
+        end
+        raise "Error #{response.status}: #{error["error"] || response.body}"
       end
 
-      JSON.parse(response.body)['response']
+      JSON.parse(response.body)["response"]
     end
   end
 end

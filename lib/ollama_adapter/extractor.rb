@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OllamaAdapter
   class Extractor
     def initialize(ollama_client)
@@ -10,7 +12,7 @@ module OllamaAdapter
         prompt: prompt,
         temperature: 0.1,
         max_tokens: 500
-    )
+      )
     end
   end
 end

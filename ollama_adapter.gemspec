@@ -5,7 +5,7 @@ require_relative "lib/ollama_adapter/version"
 Gem::Specification.new do |spec|
   spec.name = "ollama_adapter"
   spec.version = OllamaAdapter::VERSION
-  spec.authors = ["mdlka", "SergeevaAlexandra", "Darsidr", "katek1823"]
+  spec.authors = %w[mdlka SergeevaAlexandra Darsidr katek1823]
   spec.email = ["mogilevskii@sfedu.ru", "aleser@sfedu.ru", "dsidoruk@sfedu.ru", "kopaneva@sfedu.ru"]
 
   spec.summary = "Write a short summary, because RubyGems requires one."
