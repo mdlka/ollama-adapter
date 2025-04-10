@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name = "ollama_adapter"
   spec.version = OllamaAdapter::VERSION
   spec.authors = %w[mdlka SergeevaAlexandra Darsidr katek1823]
-  spec.email = ["mogilevskii@sfedu.ru", "aleser@sfedu.ru", "dsidoruk@sfedu.ru", "kopaneva@sfedu.ru"]
+  spec.email = %w[mogilevskii@sfedu.ru aleser@sfedu.ru dsidoruk@sfedu.ru kopaneva@sfedu.ru]
 
   spec.summary = "Write a short summary, because RubyGems requires one."
   spec.description = "Write a longer description or delete this line."
@@ -27,9 +27,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
-
-  # For more information and examples about making a new gem, check out our
-  # guide at: https://bundler.io/guides/creating_gem.html
+  spec.add_development_dependency "minitest", "~> 5.16"
+  spec.add_development_dependency "rubocop", "~> 1.21"
+  spec.add_dependency "faraday", "~> 2.12"
 end
