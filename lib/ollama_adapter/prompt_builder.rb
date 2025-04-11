@@ -3,6 +3,7 @@
 require "json"
 
 module OllamaAdapter
+  # Builds and formats prompts for the LLM.
   class PromptBuilder
     # Builds a prompt to extract structured data from text based on a schema.
     #

@@ -7,7 +7,7 @@ require "faraday"
 class OllamaClientTest < Minitest::Test
   def setup
     WebMock.enable!
-    WebMock.disable_net_connect!
+    WebMock.disable_net_connect!(allow_localhost: true)
 
     @ollama_url = "http://localhost:11434"
     @model_name = "test-model"
