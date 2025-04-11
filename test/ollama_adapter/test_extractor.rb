@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "../test_helper"
+require "webmock/minitest"
 require "json"
 
 class ExtractorIntegrationTest < Minitest::Test
@@ -8,6 +9,8 @@ class ExtractorIntegrationTest < Minitest::Test
   MODEL_NAME = "qwen2.5:3b"
 
   def setup
+    WebMock.allow_net_connect!
+
     @client = OllamaAdapter::OllamaClient.new(OLLAMA_URL, MODEL_NAME)
     @extractor = OllamaAdapter::Extractor.new(@client)
     @input_text = <<~TEXT
